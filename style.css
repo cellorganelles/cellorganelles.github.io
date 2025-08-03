@@ -1,0 +1,40 @@
+:root {
+    --aqua: rgb(204, 255, 223);
+    --teal: rgb(0, 175, 120);
+    --yg: rgb(225, 255, 200); /* Yellow gren */
+}
+body {
+    background-color: var(--teal);
+    color: white;
+    font-family: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', cursive;
+    margin: auto;
+    text-align: center;
+}
+h1 {
+    color: var(--yg);
+    font-family: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', cursive;
+    font-size: 32pt;
+    margin-bottom: 5px;
+}
+hr {
+    border-top: solid 5px var(--aqua);
+    border-left: none;
+    border-radius: 5px;
+    border-right: none;
+    margin-bottom: 20px;
+    width: 25%;
+}
+.char {
+    background-color: white;
+    color: black;
+    height: 100px;
+    width: 100%;
+}
+#chars {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items: center;
+    margin-left: 10%;
+    margin-right: 10%;
+}
