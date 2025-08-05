@@ -1,4 +1,6 @@
 var chars = document.getElementById("chars");
+var char = document.getElementById("char");
+    var charName = document.getElementById("name");
 
 const characters = [
     /*
@@ -16,9 +18,15 @@ characters.forEach(function(i){
     let icon = document.createElement("div");
     icon.classList.add("char");
     icon.title = i.desc;
+    icon.onclick = function(){display(i)}
     let name = document.createElement("span");
     name.classList.add("name");
     name.innerHTML = i.name;
     icon.appendChild(name);
     chars.appendChild(icon);
 })
+
+function display(c) {
+    char.style.visibility = "visible";
+    charName.innerHTML = c.name;
+}

@@ -1,10 +1,12 @@
 :root {
     --aqua: rgb(204, 255, 223);
+    --gradient: linear-gradient(180deg, var(--teal), var(--turq));
     --teal: rgb(0, 175, 120);
+    --turq: rgb(0, 180, 175);
     --yg: rgb(225, 255, 200); /* Yellow gren */
 }
 body {
-    background-color: var(--teal);
+    background: var(--gradient);
     color: white;
     font-family: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', cursive;
     margin: auto;
@@ -14,6 +16,7 @@ h1 {
     color: var(--yg);
     font-family: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', cursive;
     font-size: 32pt;
+    letter-spacing: 1px;
     margin-bottom: 5px;
 }
 hr {
@@ -24,6 +27,9 @@ hr {
     margin-bottom: 20px;
     width: 25%;
 }
+html {
+    background-color: var(--teal);
+}
 .char {
     background-color: white;
     color: black;
@@ -33,6 +39,17 @@ hr {
 .name {
     align-items: end;
     visibility: visible;
+}
+#char {
+    background: var(--gradient);
+    height: 100%;
+    left: 25px;
+    margin: auto;
+    position: fixed;
+    text-align: left;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
 }
 #chars {
     display: grid;
