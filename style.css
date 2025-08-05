@@ -30,6 +30,10 @@ hr {
     height: 100px;
     width: 100%;
 }
+.name {
+    align-items: end;
+    visibility: visible;
+}
 #chars {
     display: grid;
     grid-gap: 10px;
