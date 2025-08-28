@@ -4,17 +4,20 @@
     --teal: rgb(0, 175, 120);
     --turq: rgb(0, 180, 175);
     --yg: rgb(225, 255, 200); /* Yellow gren */
+    --chewy: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
+    --happy-monkey: 'Happy Monkey', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
+    --short-stack: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
 }
 body {
     background: var(--gradient);
     color: white;
-    font-family: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', cursive;
+    font-family: var(--short-stack);
     margin: auto;
     text-align: center;
 }
 h1 {
     color: var(--yg);
-    font-family: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', cursive;
+    font-family: var(--chewy);
     font-size: 32pt;
     letter-spacing: 1px;
     margin-bottom: 5px;
@@ -33,6 +36,7 @@ html {
 .char {
     background-color: white;
     color: black;
+    cursor: pointer;
     height: 100px;
     width: 100%;
 }
@@ -45,9 +49,11 @@ html {
     height: 100%;
     left: 25px;
     margin: auto;
+    opacity: 0;
     position: fixed;
     text-align: left;
     top: 0;
+    transition: opacity 0.5s;
     visibility: hidden;
     width: 100%;
 }
@@ -59,3 +65,38 @@ html {
     margin-left: 10%;
     margin-right: 10%;
 }
+#close-btn {
+    background: none;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    font-size: 24pt;
+    height: fit-content;
+    position: fixed;
+    right: 25px;
+    top: 25px;
+    width: fit-content;
+}
+#name {
+    display: inline-block;
+    font-weight: normal;
+    letter-spacing: 0;
+}
+#quote {
+    background: none;
+    display: inline-block;
+    font-family: var(--happy-monkey);
+    font-size: 16pt;
+    text-align: center;
+    width: 70%;
+}
+#quote::before {
+    content: "❝ "
+}
+#quote::after {
+    content: " ❞"
+}
+
+/* @media screen and {min-width: 500px} {
+
+} */

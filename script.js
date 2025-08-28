@@ -1,6 +1,7 @@
 var chars = document.getElementById("chars");
 var char = document.getElementById("char");
     var charName = document.getElementById("name");
+    var closeBtn = document.getElementById("close-btn");
 
 const characters = [
     /*
@@ -27,6 +28,18 @@ characters.forEach(function(i){
 })
 
 function display(c) {
+    char.style.opacity = "1";
     char.style.visibility = "visible";
     charName.innerHTML = c.name;
 }
+
+function close() {
+    char.style.opacity = "0";
+    setTimeout(function(){
+        char.style.visibility = "hidden";
+        charName.innerHTML = "";
+    }, 500);
+}
+closeBtn.onclick = close;
+
+document.body.style.height = window.innerHeight + "px"
