@@ -3,10 +3,11 @@
     --gradient: linear-gradient(180deg, var(--teal), var(--turq));
     --teal: rgb(0, 175, 120);
     --turq: rgb(0, 180, 175);
-    --yg: rgb(225, 255, 200); /* Yellow gren */
-    --chewy: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
-    --happy-monkey: 'Happy Monkey', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
-    --short-stack: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', 'cursive';
+    --yg: rgb(225, 255, 200); /* Yellow green */
+    --chewy: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
+    --happy-monkey: 'Happy Monkey', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
+    --rounded: 'M PLUS Rounded 1c', 'Short Stack', 'Arial';
+    --short-stack: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
 }
 body {
     background: var(--gradient);
@@ -22,6 +23,10 @@ h1 {
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
+h2 {
+    font-family: var(--happy-monkey);
+    margin-top: 50px;
+}
 hr {
     border-top: solid 5px var(--aqua);
     border-left: none;
@@ -32,6 +37,9 @@ hr {
 }
 html {
     background-color: var(--teal);
+}
+p {
+    line-height: 1.5;
 }
 .char {
     background-color: white;
@@ -70,6 +78,7 @@ html {
     border: 0;
     color: white;
     cursor: pointer;
+    font-family: var(--rounded);
     font-size: 24pt;
     height: fit-content;
     position: fixed;
@@ -77,16 +86,34 @@ html {
     top: 25px;
     width: fit-content;
 }
+#content {
+    margin-top: 15px;
+}
+#content > * {
+    display: inline-block;
+    margin: auto;
+    text-align: center;
+    width: 40%;
+}
+#image {
+    height: auto;
+    width: 25%;
+}
 #name {
     display: inline-block;
     font-weight: normal;
     letter-spacing: 0;
+}
+#organelle {
+    margin-top: 5px;
+    position: fixed;
 }
 #quote {
     background: none;
     display: inline-block;
     font-family: var(--happy-monkey);
     font-size: 16pt;
+    font-weight: bold;
     text-align: center;
     width: 70%;
 }
@@ -95,6 +122,9 @@ html {
 }
 #quote::after {
     content: " ❞"
+}
+#text {
+    text-align: left;
 }
 
 /* @media screen and {min-width: 500px} {

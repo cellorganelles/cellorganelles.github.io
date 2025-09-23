@@ -1,45 +1,35 @@
 var chars = document.getElementById("chars");
 var char = document.getElementById("char");
     var charName = document.getElementById("name");
+    var organelle = document.getElementById("organelle");
+    var quote = document.getElementById("quote");
+    var image = document.getElementById("image");
+    var desc = document.getElementById("desc");
+    var jobs = document.getElementById("jobs");
     var closeBtn = document.getElementById("close-btn");
 
-const characters = [
-    /*
-    {name: "", desc: ""},
-    */
-    {name: "Cecilia", desc: "otori dessssuuuu"},
-    {name: "Cistern", desc: "totally tubular"},
-    {name: "Cristy", desc: "why so serious"},
-    {name: "Dista", desc: "YAYAYAYAYAY"},
-    {name: "Endo", desc: "stay away from me"},
-    {name: "Gigi", desc: "lil shy boi"},
-]
-
-characters.forEach(function(i){
-    let icon = document.createElement("div");
-    icon.classList.add("char");
-    icon.title = i.desc;
-    icon.onclick = function(){display(i)}
-    let name = document.createElement("span");
-    name.classList.add("name");
-    name.innerHTML = i.name;
-    icon.appendChild(name);
-    chars.appendChild(icon);
-})
-
 function display(c) {
+    setTimeout(function(){
+        chars.style.visibility = "hidden";
+    }, 500);
     char.style.opacity = "1";
     char.style.visibility = "visible";
     charName.innerHTML = c.name;
+    organelle.innerHTML = c.organelle;
+    quote.innerHTML = c.quote;
+    image.src = "/" + c.name.toLowerCase() + "/1.png";
+    desc.innerHTML = c.desc;
+    jobs.innerHTML = c.jobs;
 }
 
-function close() {
+function hide() {
+    chars.style.visibility = "visible";
     char.style.opacity = "0";
     setTimeout(function(){
         char.style.visibility = "hidden";
         charName.innerHTML = "";
     }, 500);
 }
-closeBtn.onclick = close;
+closeBtn.onclick = hide;
 
-document.body.style.height = window.innerHeight + "px"
+document.body.style.height = window.innerHeight + "px";
