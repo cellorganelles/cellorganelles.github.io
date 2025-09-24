@@ -1,7 +1,9 @@
 :root {
-    --aqua: rgb(204, 255, 223);
-    --gradient: linear-gradient(180deg, var(--teal), var(--turq));
+    --aqua: rgb(150, 255, 210);
+    --gradient: linear-gradient(180deg, var(--mint), var(--aqua));
+    --mint: rgb(204, 255, 223);
     --teal: rgb(0, 175, 120);
+    --text: rgb(0, 90, 75);
     --turq: rgb(0, 180, 175);
     --yg: rgb(225, 255, 200); /* Yellow green */
     --chewy: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
@@ -11,32 +13,43 @@
 }
 body {
     background: var(--gradient);
-    color: white;
+    color: var(--text);
     font-family: var(--short-stack);
     margin: auto;
     text-align: center;
 }
 h1 {
-    color: var(--yg);
+    color: var(--teal);
     font-family: var(--chewy);
     font-size: 32pt;
     letter-spacing: 1px;
     margin-bottom: 5px;
 }
 h2 {
+    color: var(--turq);
     font-family: var(--happy-monkey);
     margin-top: 50px;
 }
 hr {
-    border-top: solid 5px var(--aqua);
+    border-bottom: none;
     border-left: none;
     border-radius: 5px;
     border-right: none;
+    border-top: solid 8px var(--teal);
     margin-bottom: 20px;
     width: 25%;
 }
 html {
-    background-color: var(--teal);
+    background-color: var(--mint);
+}
+line {
+    border-bottom: none;
+    border-left: none;
+    border-radius: 5px;
+    border-right: none;
+    border-top: solid 8px var(--teal);
+    margin-bottom: 20px;
+    width: 25%;
 }
 p {
     line-height: 1.5;
@@ -48,8 +61,17 @@ p {
     height: 100px;
     width: 100%;
 }
+.char:hover {
+    backdrop-filter: brightness(80%);
+    .name {
+        opacity: 100%;
+        visibility: visible;
+    }
+}
 .name {
-    align-items: end;
+    opacity: 0;
+    margin-top: 5px;
+    transition: opacity 0.25s;
     visibility: visible;
 }
 #char {
@@ -76,33 +98,39 @@ p {
 #close-btn {
     background: none;
     border: 0;
-    color: white;
+    color: teal;
     cursor: pointer;
     font-family: var(--rounded);
     font-size: 24pt;
     height: fit-content;
+    opacity: 50%;
     position: fixed;
     right: 25px;
     top: 25px;
+    transition: font-size 0.25s, opacity 0.25s;
     width: fit-content;
+}
+#close-btn:hover {
+    font-size: 26pt;
+    opacity: 100%;
 }
 #content {
     margin-top: 15px;
+    text-align: center;
 }
 #content > * {
     display: inline-block;
     margin: auto;
-    text-align: center;
     width: 40%;
 }
 #image {
     height: auto;
-    width: 25%;
 }
 #name {
     display: inline-block;
     font-weight: normal;
     letter-spacing: 0;
+    text-shadow: black 1px 1px;
 }
 #organelle {
     margin-top: 5px;
@@ -111,10 +139,12 @@ p {
 #quote {
     background: none;
     display: inline-block;
+    filter: brightness(0.75);
     font-family: var(--happy-monkey);
     font-size: 16pt;
     font-weight: bold;
-    text-align: center;
+    margin-left: 4vw;
+    text-align: left;
     width: 70%;
 }
 #quote::before {
