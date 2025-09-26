@@ -6,14 +6,19 @@ var char = document.getElementById("char");
     var image = document.getElementById("image");
     var desc = document.getElementById("desc");
     var jobs = document.getElementById("jobs");
-    var closeBtn = document.getElementById("close-btn");
+var closeBtn = document.getElementById("close-btn");
 
-function display(c) {
+var aboutBtn = document.getElementById("about-btn");
+var about = document.getElementById("about");
+
+function showChar(c) {
     setTimeout(function(){
         chars.style.visibility = "hidden";
     }, 500);
-    char.style.opacity = "1";
+    char.style.opacity = 1;
     char.style.visibility = "visible";
+    closeBtn.style.opacity = 0.5;
+    closeBtn.style.visibility = "visible";
     charName.innerHTML = c.name;
     charName.style.color = c.color;
     organelle.innerHTML = c.organelle;
@@ -31,12 +36,27 @@ function display(c) {
 
 function hide() {
     chars.style.visibility = "visible";
-    char.style.opacity = "0";
+    char.style.opacity = 0;
+    about.style.opacity = 0;
+    closeBtn.style.opacity = 0;
     setTimeout(function(){
         char.style.visibility = "hidden";
         charName.innerHTML = "";
+        about.style.visibility = "hidden";
+        closeBtn.style.visibility = "hidden";
     }, 500);
 }
 closeBtn.onclick = hide;
+
+function showAbout() {
+    setTimeout(function(){
+        chars.style.visibility = "hidden";
+    }, 500);
+    about.style.opacity = 1;
+    about.style.visibility = "visible";
+    closeBtn.style.opacity = "";
+    closeBtn.style.visibility = "visible";
+}
+aboutBtn.onclick = showAbout;
 
 document.body.style.height = window.innerHeight + "px";

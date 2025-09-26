@@ -29,7 +29,7 @@ const characters = [
         name: "Cristy",
         organelle: "Mitochondria",
         quote: "I'm busy right now, tell me later.",
-        desc: "She maintains a serious attitude, but it's only surface-level. She's stubborn on occassion and a bit of a coffee addict. Few know that her opinion could be swayed with sweets.<br><br>She's cousins with Grana.",
+        desc: "A hard-working young lady. She maintains a serious attitude, but it's only surface-level. She's stubborn on occassion and a bit of a coffee addict. Few know that her opinion could be swayed with sweets.<br><br>She's cousins with Grana, but they're close like sisters.",
         jobs: "She manages the power supply (yes, the powerhouse), using sugars and Oxi to generate energy. She works long shifts that go late into the night until someone pries her away.",
         color: "rgb(255, 215, 50)",
     },
@@ -38,38 +38,38 @@ const characters = [
         organelle: "Centriole",
         quote: "Alright, let's get this started!!!",
         desc: "A super chaotic girl. She's attention-seeking, but she likes helping others. Almost always, though, her efforts make things worse.<br><br>Twins with Proxima.",
-        jobs: "mitosis",
+        jobs: "She's responsible for sorting chromos during M Phase, taking charge of the facility when it's time to replicate the CELL. But when it's I Phase, she kind of wanders around, trying to provide help to other workers.",
         color: "rgb(235, 105, 210)",
     },
     {
         name: "Endo",
         organelle: "Endosome",
         quote: "If this isn't important, leave.",
-        desc: "Cold-hearted and careless.",
-        jobs: "transfers stuff",
-        color: "#AAAAAA",
+        desc: "An aloof, indifferent young man. He prefers to be by himself, but a few of his coworkers think otherwise. Not many know that he's pretty smart.<br><br>Everyone is simply a coworker to him, but in particular Lyos and Dista get on his nerves.",
+        jobs: "He transfers and sorts proteins and lipids, having to go from Gigi's post office to Lyos' cart sometimes. He hates his job, but it was the only position left he could take.",
+        color: "#AAAABA",
     },
     {
         name: "Gigi",
         organelle: "Golgi apparatus",
         quote: "H-Huh? Oh… sorry.",
-        desc: "he's willy shy >///<",
-        jobs: "packages and ships proteins & lipids for export",
+        desc: "A very shy boy. On the outside, he looks fairly weak, but he does his work diligently and very well.<br><br>He's the younger brother of Cistern and Lumen.",
+        jobs: "He works in a post office located near the central office and factories of the CELL. His main job is to package, process, and ship proteins and lipids for export.",
         color: "rgb(255, 210, 135)",
     },
     {
         name: "Grana",
         organelle: "Chloroplast",
-        quote: "Cookies are ready! Wanna try?",
-        desc: "so happy",
-        jobs: "sunlight into sugar!!",
+        quote: "And done! Cookies are ready!",
+        desc: "A energetic, thoughtful girl. She loves cooking food and baking treats for her fellow coworkers.<br><br>She's cousins with Cristy, but they're close like sisters. She also has Rubio and Pepsi as kitchen helpers.",
+        jobs: "An expert chef, she provides meals throughout the day for the other workers. With special technology and help from the sun, she's especially talented at making sweets.",
         color: "rgb(100, 235, 100)",
     },
     {
         name: "Flynn",
         organelle: "Flagella",
-        quote: "Whoops! Didn't see you there!!",
-        desc: "too clumsy",
+        quote: "Whoa! Sorry, didn't see you there!!",
+        desc: "A ",
         jobs: "steers cell",
         color: "rgb(65, 235, 215)",
     },
@@ -117,8 +117,8 @@ const characters = [
         name: "Rane",
         organelle: "Plasma membrane",
         quote: "Everyone, single file line~!",
-        desc: "She's super extroverted and outgoing. Everyone is a friend to her. She seems to be in a million places at once.", 
-        jobs: "transport uhh",
+        desc: "An extroverted, eccentric girl. To her, everyone is a friend. She's always in the know; strangely enough, it feels like she's in a million places at once.<br><br>As stated before, she's friends with everyone, but she's closer to Yulo and Catherin.",
+        jobs: "She has plenty of jobs; monitoring things that go in and out of the CELL, preparing molecules for transport, and even watching other workers to ensure they're doing their job.",
         color: "rgb(255, 160, 200)",
     },
     {
@@ -149,8 +149,8 @@ const characters = [
         name: "Yulo",
         organelle: "Cell wall",
         quote: "…",
-        desc: "quiet",
-        jobs: "ensures walls are safe idk",
+        desc: "A nonchalant, rigid guy. He's totally deadpan, choosing not to talk most of the time. Since he has lots of free time, he's extremely skilled in a bunch of areas.",
+        jobs: "His main job is to ensure the walls around the CELL are maintained. Similar to Rane, he also monitors the transport of substances between other facilities. Other than that, he basically has the whole day to himself.",
         color: "rgb(25, 150, 50)",
     },
 ]
@@ -158,7 +158,7 @@ const characters = [
 characters.forEach(function(i){
     let icon = document.createElement("div");
     icon.classList.add("char");
-    icon.onclick = function(){display(i)}
+    icon.onclick = function(){showChar(i)}
     icon.style.backgroundColor = i.color;
     let name = document.createElement("p");
     name.classList.add("name");
