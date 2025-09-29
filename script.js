@@ -6,10 +6,14 @@ var char = document.getElementById("char");
     var image = document.getElementById("image");
     var desc = document.getElementById("desc");
     var jobs = document.getElementById("jobs");
+    var infoBtn = document.getElementById("info-btn");
+var info = document.getElementById("info");
 var closeBtn = document.getElementById("close-btn");
 
 var aboutBtn = document.getElementById("about-btn");
 var about = document.getElementById("about");
+    var aboutContent = document.getElementById("about-content");
+    var menuBtns = document.getElementById("menu-btns");
 
 function showChar(c) {
     setTimeout(function(){
@@ -32,6 +36,7 @@ function showChar(c) {
         i.style.color = c.color;
         i.style.filter = "brightness(0.5)";
     }
+    document.body.style.overflow = "hidden";
 }
 
 function hide() {
@@ -45,6 +50,7 @@ function hide() {
         about.style.visibility = "hidden";
         closeBtn.style.visibility = "hidden";
     }, 500);
+    document.body.style.overflow = "auto";
 }
 closeBtn.onclick = hide;
 
@@ -56,7 +62,32 @@ function showAbout() {
     about.style.visibility = "visible";
     closeBtn.style.opacity = "";
     closeBtn.style.visibility = "visible";
+    document.body.style.overflow = "hidden";
 }
 aboutBtn.onclick = showAbout;
+
+function tab(t) {
+    menuBtns.childNodes.forEach(function(i){
+        if (i.innerHTML != null) {
+            i.classList.remove("selected");
+        }
+    });
+    aboutContent.childNodes.forEach(function(i){
+        if (i.innerHTML != null) {
+            i.style = "position: fixed; visibility: hidden";
+        }
+    });
+    t.classList.add("selected");
+    let txt = document.getElementById(t.dataset.name);
+    txt.style = "position: static; visibility: visible";
+}
+menuBtns.childNodes.forEach(function(i){
+    i.onclick = function(){tab(i)};
+});
+
+function showInfo() {
+    alert("coming soon :DD");
+}
+infoBtn.onclick = showInfo;
 
 document.body.style.height = window.innerHeight + "px";

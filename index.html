@@ -17,25 +17,46 @@
         <div id="chars"></div>
         <div class="modal" id="char">
             <h1 id="name">Name</h1>
-            <h2 id="organelle">organelle</h2>
-            <div id="quote">quote</div>
-            <div id="content">
+            <h2 id="organelle">[organelle]</h2>
+            <div id="quote">[quote]</div>
+            <div id="char-content">
                 <div>
                     <img id="image" src="https://nunnerrs.github.io/skylar-art/assets/placeholder.png">
                 </div>
                 <div id="text">
-                    <p id="desc">description</p>
+                    <p id="desc">why must you have a potato pc</p>
                     <h2>Jobs</h2>
-                    <p id="jobs">Bro does nothing all day.</p>
+                    <p id="jobs">--</p>
                 </div>
+                <div id="info-btn">i</div>
             </div>
+        </div>
+        <div class="modal" id="info">
+            <h1>Organelle</h1>
+            <p>yay</p>
         </div>
         <div class="modal" id="about">
             <h1>About the CELL</h1>
-            <p>wip</p>
+            <p>A little franchise I made for fun. All these characters are based on the different organelles in the cell, plus enzymes and proteins. Together, they work in a facility called the Core Enterprise for Living Life (C.E.L.L.)</p>
+            <div id="menu-btns">
+                <button data-name="details" class="button selected">Details</button>
+                <button data-name="usage" class="button">Usage</button>
+                <button data-name="other" class="button">Other</button>
+            </div>
+            <div id="about-content">
+                <div id="details">
+                    <p>detailssss</p>
+                </div>
+                <div id="usage" style="position: fixed; visibility: hidden">
+                    <p>no steal</p>
+                </div>
+                <div id="other" style="position: fixed; visibility: hidden">
+                    <p>cells at work</p>
+                </div>
+            </div>
         </div>
         <button id="close-btn">×</button>
-        <footer><button id="about-btn">About</button></footer>
+        <footer><button class="button" id="about-btn">About</button></footer>
         <script src="characters.js"></script>
         <script src="script.js"></script>
     </body>

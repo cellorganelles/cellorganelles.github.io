@@ -165,4 +165,4 @@ characters.forEach(function(i){
     name.innerHTML = i.name;
     icon.appendChild(name);
     chars.appendChild(icon);
-})
+});

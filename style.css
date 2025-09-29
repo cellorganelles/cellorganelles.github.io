@@ -1,8 +1,10 @@
 :root {
     --aqua: rgb(150, 255, 210);
     --gradient: linear-gradient(180deg, var(--mint), var(--aqua));
+    --gradient-dark: linear-gradient(180deg, var(--teal), var(--turq));
     --mint: rgb(204, 255, 223);
     --teal: rgb(0, 175, 120);
+    --teal-dark: rgb(0, 150, 102);
     --text: rgb(0, 90, 75);
     --turq: rgb(0, 180, 175);
     --yg: rgb(225, 255, 200); /* Yellow green */
@@ -47,6 +49,7 @@ hr {
 }
 html {
     background-color: var(--mint);
+    scrollbar-color: var(--teal) var(--mint);
 }
 line {
     border-bottom: none;
@@ -59,6 +62,17 @@ line {
 }
 p {
     line-height: 1.5;
+}
+.button {
+    background: 0;
+    border: 0;
+    cursor: pointer;
+    font-family: var(--happy-monkey);
+    font-size: 14pt;
+}
+.button:hover {
+    color: var(--teal);
+    transition: color 0.15s;
 }
 .char {
     background-color: white;
@@ -78,28 +92,48 @@ p {
 .modal {
     background: var(--gradient);
     height: 100%;
-    left: 25px;
-    margin: auto;
+    left: 0;
+    /* margin: auto; */
     opacity: 0;
+    /* padding: 25px; */
+    padding-left: 25px;
+    padding-right: 0px;
     position: fixed;
+    right: 0;
     text-align: left;
     top: 0;
     transition: opacity 0.5s;
     visibility: hidden;
-    width: 100%;
+    width: calc(100% - 25px);
+    z-index: 2;
 }
 .name {
     opacity: 0;
     margin-top: 5px;
+    scrollbar-color: var(--teal) var(--mint);
     transition: opacity 0.25s;
     visibility: visible;
 }
-#about-btn {
-    background: 0;
-    border: 0;
-    cursor: pointer;
-    font-family: var(--happy-monkey);
-    font-size: 14pt;
+.selected {
+    background: var(--teal-dark) !important;
+}
+#about > p {
+    width: calc(100% - 25px);
+}
+#about-content {
+    background: var(--gradient-dark);
+    color: white;
+    height: 80%;
+    left: 0;
+    padding: 25px;
+    position: fixed;
+    right: 0;
+    /* width: 100%; */
+}
+#char {
+    padding-left: 25px;
+    overflow-y: auto;
+    width: 100%;
 }
 #chars {
     display: grid;
@@ -124,22 +158,55 @@ p {
     transition: font-size 0.25s, opacity 0.25s;
     width: fit-content;
     visibility: hidden;
+    z-index: 3;
 }
 #close-btn:hover {
     font-size: 26pt;
     opacity: 100% !important;
 }
-#content {
+#char-content {
     margin-top: 15px;
     text-align: center;
 }
-#content > * {
+#char-content > * {
     display: inline-block;
     margin: auto;
     width: 40%;
 }
 #image {
     height: auto;
+}
+#info-btn {
+    background: var(--turq);
+    border-radius: 999px;
+    bottom: 10px;
+    color: white;
+    cursor: pointer;
+    font-family: Courier, monospace;
+    font-size: 32pt;
+    height: 50px;
+    padding: 5px;
+    position: fixed;
+    right: 10px;
+    width: 50px;
+}
+#menu-btns {
+    display: grid;
+    gap: 0px;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+    width: 100%;
+}
+#menu-btns > * {
+    background-color: var(--teal);
+    color: white;
+    padding: 5px;
+    width: 100%;
+}
+#menu-btns > *:not(.selected):hover {
+    filter: brightness(1.15);
 }
 #name {
     display: inline-block;
@@ -149,7 +216,7 @@ p {
 }
 #organelle {
     margin-top: 5px;
-    position: fixed;
+    position: absolute;
 }
 #quote {
     background: none;
