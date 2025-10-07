@@ -7,6 +7,7 @@ const characters = [
         desc: "", 
         jobs: "",
         color: "",
+        info: "",
     },
     */
     {
@@ -16,6 +17,7 @@ const characters = [
         desc: "A soft-hearted girl who's always cheerful. She speaks really slowly, and her passivity sometimes gets her into trouble.<br><br>She's close friends with Flynn.",
         jobs: "She works outside of the facility, in a central watch tower on top of the building. It's a control center that operates giant mechanical \"arms\" (ones she calls \"Silly Towers\"), regulating exports and things that pass by the CELL.<br><br>She essentially guards the facility alongside Rane.",
         color: "rgb(230, 245, 130)",
+        info: "These are actually two different organelles, but I made her represent both as they're pretty similar.<br><br><br>Cilia (singular: cilium) are hair-like structures located on the outside of eukaryotic cells. Its main purpose is movement (imagine tentacles), but it's also used for the transfer of substances over the cell. They're composed of different types of microtubules. <br><br>Cilia is found in two types: motile and primary. Motile cilia are built for movement (they actually dance rhythmically), featuring a 9+2 microtubule arrangement in its core. Primary cilia have a 9+0 structure and aren't as motile, but their main purpose is for signaling.<br><br><br>Pili (singular: pilus) look similar but are only found in prokaryotes. They serve a different purpose, used mostly for conjugation (DNA transfer to other organisms) and adhesion to surfaces.<br><br><br>If it wasn't obvious enough, I chose her name to be Cecilia because it has cilia in it :]",
     },
     {
         name: "Cistern",
@@ -24,6 +26,7 @@ const characters = [
         desc: "A chill, laid-back guy. He sometimes acts a little shady though.<br><br>Twins with Lumen, but he's slightly older. He's also the older brother of Gigi.",
         jobs: "He works in a building connected to the main office. He's responsible for producing the CELL's lipid supply, including the phiphi that make up the walls.<br><br>His station is also a water treatment plant, ensuring no toxic substances end up in their systems.",
         color: "rgb(120, 145, 255)",
+        info: "The smooth endoplasmic reticulum (sometimes written as SER) is an organelle shaped like a network of membrane tubes. It's connected to the rough ER and the nucleus. Unlike the rough ER, it doesn't have ribosomes, giving it its smooth appearance.<br><br>The smooth ER has many functions, notably lipid synthesis, creating substances like steroids and phospholipids. It's also responsible for the detoxification of harmful poisons (including drugs and alcohol) using the enzymes located in its interior. The SER also metabolizes glycogen into glucose and acts as an important storage for calcium ions.<br><br>This organelle is most abundant in liver cells, where detoxification is crucial.<br><br><br>Cistern's name comes from the term \"cisternal space,\" the area inside the ER. His name is synonymous with his twin.",
     },
     {
         name: "Cristy",
@@ -32,6 +35,7 @@ const characters = [
         desc: "A hard-working young lady. She maintains a serious attitude, but it's only surface-level. She's stubborn on occassion and a bit of a coffee addict. Few know that her opinion could be swayed with sweets.<br><br>She's cousins with Grana, but they're close like sisters.",
         jobs: "She manages the power supply (yes, the powerhouse), using sugars and Oxi to generate energy. She works long shifts that go late into the night until someone pries her away.",
         color: "rgb(255, 215, 50)",
+        info: "POWERHOUSEEEEEE<br><br><br>Her name comes from the term \"cristae,\" and yes, it's pronounced the same.",
     },
     {
         name: "Dista",
@@ -40,6 +44,7 @@ const characters = [
         desc: "A super chaotic girl. She's attention-seeking, but she likes helping others. Almost always, though, her efforts make things worse.<br><br>Twins with Proxima.",
         jobs: "She's responsible for sorting chromos during M Phase, taking charge of the facility when it's time to replicate the CELL. But when it's I Phase, she kind of wanders around, trying to provide help to other workers.",
         color: "rgb(235, 105, 210)",
+        info: "YAYAYAYAY<br><br><br>Dista's name is derived from the word \"distal,\" as in the distal (far) end of a centriole.",
     },
     {
         name: "Endo",
@@ -48,6 +53,7 @@ const characters = [
         desc: "An aloof, indifferent young man. He prefers to be by himself, but a few of his coworkers think otherwise. Not many know that he's pretty smart.<br><br>Everyone is simply a coworker to him, but in particular Lyos and Dista get on his nerves.",
         jobs: "He transfers and sorts proteins and lipids, having to go from Gigi's post office to Lyos' cart sometimes. He hates his job, but it was the only position left he could take.",
         color: "#AAAABA",
+        info: "",
     },
     {
         name: "Gigi",
@@ -56,6 +62,7 @@ const characters = [
         desc: "A very shy boy. On the outside, he looks fairly weak, but he does his work diligently and very well.<br><br>He's the younger brother of Cistern and Lumen.",
         jobs: "He works in a post office located near the central office and factories of the CELL. His main job is to package, process, and ship proteins and lipids for export.",
         color: "rgb(255, 210, 135)",
+        info: "",
     },
     {
         name: "Grana",
@@ -64,6 +71,7 @@ const characters = [
         desc: "A energetic, thoughtful girl. She loves cooking food and baking treats for her fellow coworkers.<br><br>She's cousins with Cristy, but they're close like sisters. She also has Rubio and Pepsi as kitchen helpers.",
         jobs: "An expert chef, she provides meals throughout the day for the other workers. With special technology and help from the sun, she's especially talented at making sweets.",
         color: "rgb(100, 235, 100)",
+        info: "",
     },
     {
         name: "Flynn",
@@ -72,14 +80,16 @@ const characters = [
         desc: "A ",
         jobs: "steers cell",
         color: "rgb(65, 235, 215)",
+        info: "",
     },
     {
         name: "Lyos",
         organelle: "Lysosome",
         quote: "Here, let me throw that away for you~",
         desc: "biggie", 
-        jobs: "breaks down proteins. eats food all day.",
+        jobs: "As a janitor, his main job is cleaning the facility. He collects waste, usually misfolded proteins, in specialized trash bags that breaks down anything that goes inside. He's also responsible for \"obtaining nutrients\" for the CELL; in reality, he just orders take-out, saves the dessert, and eats the rest…",
         color: "rgb(0, 200, 255)",
+        info: "",
     },
     {
         name: "Leo",
@@ -88,6 +98,7 @@ const characters = [
         desc: "joyous but has sad lore", 
         jobs: "makes ribros all day",
         color: "rgb(160, 180, 255)",
+        info: "",
     },
     {
         name: "Luke",
@@ -96,6 +107,7 @@ const characters = [
         desc: "serious but calm around lil bro", 
         jobs: "big boss of the cell",
         color: "rgb(160, 150, 255)",
+        info: "",
     },
     {
         name: "Lumen",
@@ -104,6 +116,7 @@ const characters = [
         desc: "She looks serious on the outside, but she's very empathetic and kind. Though sometimes, she can get really stressed out…", 
         jobs: "She makes amino in a factory connected to the main office.",
         color: "rgb(100, 105, 235)",
+        info: "yes<br><br><br>Lumen's name is the word for the space inside the ER. Her name is synonymous with her twin.",
     },
     {
         name: "Proxima",
@@ -112,6 +125,7 @@ const characters = [
         desc: "mitosis", 
         jobs: "mitosis",
         color: "rgb(210, 100, 255)",
+        info: "yesh<br><br><br>Proxima's name is derived from the word \"proximal,\" as in the proximal (close) end of a centriole.",
     },
     {
         name: "Rane",
@@ -120,6 +134,7 @@ const characters = [
         desc: "An extroverted, eccentric girl. To her, everyone is a friend. She's always in the know; strangely enough, it feels like she's in a million places at once.<br><br>As stated before, she's friends with everyone, but she's closer to Yulo and Catherin.",
         jobs: "She has plenty of jobs; monitoring things that go in and out of the CELL, preparing molecules for transport, and even watching other workers to ensure they're doing their job.",
         color: "rgb(255, 160, 200)",
+        info: "",
     },
     {
         name: "Roxy",
@@ -128,6 +143,7 @@ const characters = [
         desc: "nurse of cell", 
         jobs: "detox",
         color: "rgb(235, 100, 145)",
+        info: "",
     },
     {
         name: "Sol",
@@ -136,6 +152,7 @@ const characters = [
         desc: "oneechan", 
         jobs: "emotional (and physical) support",
         color: "rgb(250, 235, 145)",
+        info: "",
     },
     {
         name: "Tonio",
@@ -144,6 +161,7 @@ const characters = [
         desc: "cool warehouse dude", 
         jobs: "stores stuff",
         color: "rgb(125, 230, 245)",
+        info: "",
     },
     {
         name: "Yulo",
@@ -152,6 +170,7 @@ const characters = [
         desc: "A nonchalant, rigid guy. He's totally deadpan, choosing not to talk most of the time. Since he has lots of free time, he's extremely skilled in a bunch of areas.",
         jobs: "His main job is to ensure the walls around the CELL are maintained. Similar to Rane, he also monitors the transport of substances between other facilities. Other than that, he basically has the whole day to himself.",
         color: "rgb(25, 150, 50)",
+        info: "",
     },
 ]
 

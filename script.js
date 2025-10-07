@@ -1,4 +1,5 @@
 var chars = document.getElementById("chars");
+var currentChar;
 var char = document.getElementById("char");
     var charName = document.getElementById("name");
     var organelle = document.getElementById("organelle");
@@ -8,14 +9,25 @@ var char = document.getElementById("char");
     var jobs = document.getElementById("jobs");
     var infoBtn = document.getElementById("info-btn");
 var info = document.getElementById("info");
-var closeBtn = document.getElementById("close-btn");
+    var iOrganelle = document.getElementById("info-organelle");
+    var iImage = document.getElementById("info-image");
+    var iText = document.getElementById("info-text");
 
 var aboutBtn = document.getElementById("about-btn");
 var about = document.getElementById("about");
     var aboutContent = document.getElementById("about-content");
     var menuBtns = document.getElementById("menu-btns");
 
+var closeBtn = document.getElementById("close-btn");
+
+var path = "";
+if (!window.location.href.match("cellorganelles.github.io")) {
+    path = "https://organelle.netlify.app/";
+    console.log("not on github");
+}
+
 function showChar(c) {
+    currentChar = c;
     setTimeout(function(){
         chars.style.visibility = "hidden";
     }, 500);
@@ -28,7 +40,7 @@ function showChar(c) {
     organelle.innerHTML = c.organelle;
     quote.innerHTML = c.quote;
     quote.style.color = c.color;
-    image.src = "/" + c.name.toLowerCase() + "/1.png";
+    image.src = path + c.name.toLowerCase() + "/1.png";
     desc.innerHTML = c.desc;
     jobs.innerHTML = c.jobs;
     h2 = document.getElementsByTagName("h2");
@@ -38,21 +50,6 @@ function showChar(c) {
     }
     document.body.style.overflow = "hidden";
 }
-
-function hide() {
-    chars.style.visibility = "visible";
-    char.style.opacity = 0;
-    about.style.opacity = 0;
-    closeBtn.style.opacity = 0;
-    setTimeout(function(){
-        char.style.visibility = "hidden";
-        charName.innerHTML = "";
-        about.style.visibility = "hidden";
-        closeBtn.style.visibility = "hidden";
-    }, 500);
-    document.body.style.overflow = "auto";
-}
-closeBtn.onclick = hide;
 
 function showAbout() {
     setTimeout(function(){
@@ -86,8 +83,54 @@ menuBtns.childNodes.forEach(function(i){
 });
 
 function showInfo() {
-    alert("coming soon :DD");
+    info.style.opacity = 1;
+    info.style.visibility = "visible";
+    char.style.filter = "blur(5px)";
+    infoBtn.style.opacity = 0;
+    iOrganelle.innerHTML = currentChar.organelle;
+    iImage.src = path + currentChar.name.toLowerCase() + "/organelle.png";
+    iText.innerHTML = currentChar.info;
+    if (currentChar.info == "") {
+        iText.innerHTML = "wip";
+    }
+    setTimeout(function(){
+        char.onclick = hideInfo;
+        infoBtn.style.visibility = "hidden";
+    }, 500);
 }
 infoBtn.onclick = showInfo;
+
+function hideInfo() {
+    char.onclick = null;
+    if (info.style.opacity == 1) {
+        info.style.opacity = 0;
+        char.style.filter = "";
+        infoBtn.style.visibility = "visible";
+        infoBtn.style.opacity = 1;
+        setTimeout(function(){
+            info.style.visibility = "hidden";
+        }, 500);
+    }
+}
+
+function hide() {
+    if (info.style.opacity == 0) {
+        currentChar = null;
+        chars.style.visibility = "visible";
+        char.style.opacity = 0;
+        about.style.opacity = 0;
+        closeBtn.style.opacity = 0;
+        setTimeout(function(){
+            char.style.visibility = "hidden";
+            charName.innerHTML = "";
+            about.style.visibility = "hidden";
+            closeBtn.style.visibility = "hidden";
+        }, 500);
+        document.body.style.overflow = "auto";
+    } else {
+        hideInfo();
+    }
+}
+closeBtn.onclick = hide;
 
 document.body.style.height = window.innerHeight + "px";

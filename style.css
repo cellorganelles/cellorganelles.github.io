@@ -13,6 +13,9 @@
     --rounded: 'M PLUS Rounded 1c', 'Short Stack', 'Arial';
     --short-stack: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
 }
+::selection {
+    background-color: rgba(0, 255, 174, 0.75) !important;
+}
 body {
     background: var(--gradient);
     color: var(--text);
@@ -176,6 +179,21 @@ p {
 #image {
     height: auto;
 }
+#info {
+    background: var(--gradient-dark);
+    border-radius: 10px 10px 0 0;
+    bottom: 0;
+    color: white;
+    height: 80%;
+    margin: auto auto 0;
+    max-width: 750px;
+    overflow-y: auto;
+    padding-right: 25px;
+    scrollbar-color: var(--mint) var(--teal);
+    width: 75%;
+    /* width: calc(100% - 50px); */
+    z-index: 4;
+}
 #info-btn {
     background: var(--turq);
     border-radius: 999px;
@@ -188,7 +206,11 @@ p {
     padding: 5px;
     position: fixed;
     right: 10px;
+    transition: opacity 0.5s;
     width: 50px;
+}
+#info-organelle {
+    color: var(--mint);
 }
 #menu-btns {
     display: grid;
