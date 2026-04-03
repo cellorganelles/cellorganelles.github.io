@@ -16,7 +16,7 @@ var info = document.getElementById("info");
 var aboutBtn = document.getElementById("about-btn");
 var about = document.getElementById("about");
     var aboutContent = document.getElementById("about-content");
-    var menuBtns = document.getElementById("menu-btns");
+    var tabBtns = document.getElementById("tab-btns");
 
 var closeBtn = document.getElementById("close-btn");
 
@@ -26,6 +26,7 @@ if (!window.location.href.match("cellorganelles.github.io")) {
     console.log("not on github");
 }
 
+// Opens character modal
 function showChar(c) {
     currentChar = c;
     setTimeout(function(){
@@ -51,20 +52,30 @@ function showChar(c) {
     document.body.style.overflow = "hidden";
 }
 
+// Opens About modal
 function showAbout() {
     setTimeout(function(){
         chars.style.visibility = "hidden";
     }, 500);
     about.style.opacity = 1;
     about.style.visibility = "visible";
+    tabBtns.childNodes.forEach(function(i){
+        if (i.innerHTML != null && i.classList != null) {
+            if (i.classList.value.search("selected") != -1 && i.dataset.name != null) {
+                let tab = document.getElementById(i.dataset.name);
+                tab.style = "position: static; visibility: visible";
+            }
+        }
+    });
     closeBtn.style.opacity = "";
     closeBtn.style.visibility = "visible";
     document.body.style.overflow = "hidden";
 }
 aboutBtn.onclick = showAbout;
 
+// Switches tabs in About modal
 function tab(t) {
-    menuBtns.childNodes.forEach(function(i){
+    tabBtns.childNodes.forEach(function(i){
         if (i.innerHTML != null) {
             i.classList.remove("selected");
         }
@@ -78,10 +89,11 @@ function tab(t) {
     let txt = document.getElementById(t.dataset.name);
     txt.style = "position: static; visibility: visible";
 }
-menuBtns.childNodes.forEach(function(i){
+tabBtns.childNodes.forEach(function(i){
     i.onclick = function(){tab(i)};
 });
 
+// Opens info popup
 function showInfo() {
     info.style.opacity = 1;
     info.style.visibility = "visible";
@@ -100,6 +112,7 @@ function showInfo() {
 }
 infoBtn.onclick = showInfo;
 
+// Closes info popup
 function hideInfo() {
     char.onclick = null;
     if (info.style.opacity == 1) {
@@ -113,12 +126,20 @@ function hideInfo() {
     }
 }
 
+// Close button, hides all modals
 function hide() {
     if (info.style.opacity == 0) {
         currentChar = null;
         chars.style.visibility = "visible";
         char.style.opacity = 0;
         about.style.opacity = 0;
+        // Hides About content (gets in the way of character icons)
+        tabBtns.childNodes.forEach(function(i){
+            if (i.innerHTML != null && i.dataset.name != null) {
+                let tab = document.getElementById(i.dataset.name);
+                tab.style = "position: fixed; visibility: hidden";
+            }
+        });
         closeBtn.style.opacity = 0;
         setTimeout(function(){
             char.style.visibility = "hidden";

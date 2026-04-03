@@ -16,6 +16,10 @@
 ::selection {
     background-color: rgba(0, 255, 174, 0.75) !important;
 }
+a {
+    color: var(--mint);
+    text-decoration: dotted underline;
+}
 body {
     background: var(--gradient);
     color: var(--text);
@@ -69,6 +73,7 @@ p {
 .button {
     background: 0;
     border: 0;
+    border-radius: 25px 25px 0 0;
     cursor: pointer;
     font-family: var(--happy-monkey);
     font-size: 14pt;
@@ -212,7 +217,7 @@ p {
 #info-organelle {
     color: var(--mint);
 }
-#menu-btns {
+#tab-btns {
     display: grid;
     gap: 0px;
     grid-template-columns: 1fr 1fr 1fr;
@@ -221,13 +226,13 @@ p {
     text-align: center;
     width: 100%;
 }
-#menu-btns > * {
+#tab-btns > * {
     background-color: var(--teal);
     color: white;
     padding: 5px;
     width: 100%;
 }
-#menu-btns > *:not(.selected):hover {
+#tab-btns > *:not(.selected):hover {
     filter: brightness(1.15);
 }
 #name {
@@ -261,6 +266,11 @@ p {
     text-align: left;
 }
 
-/* @media screen and {min-width: 500px} {
-
-} */
+@media screen and (max-width: 500px) {
+    #quote {
+        margin-left: 0;
+        margin-top: 50px;
+        text-align: center;
+        width: calc(100% - 25px);
+    }
+}
