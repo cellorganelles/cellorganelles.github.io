@@ -167,7 +167,7 @@ const characters = [
         name: "Tonio",
         organelle: "Vacuole",
         quote: "Don't worry, leave it to me.",
-        desc: "cool warehouse dude",
+        desc: "cool warehouse dude. plus more",
         jobs: "stores stuff",
         color: "rgb(125, 230, 245)",
         info: "",
