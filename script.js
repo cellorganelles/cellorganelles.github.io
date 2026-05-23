@@ -41,7 +41,7 @@ function showChar(c) {
     organelle.innerHTML = c.organelle;
     quote.innerHTML = c.quote;
     quote.style.color = c.color;
-    image.src = path + c.name.toLowerCase() + "/1.png";
+    image.src = path + c.name.toLowerCase() + "/full.png";
     desc.innerHTML = c.desc;
     jobs.innerHTML = c.jobs;
     h2 = document.getElementsByTagName("h2");
@@ -100,7 +100,7 @@ function showInfo() {
     char.style.filter = "blur(5px)";
     infoBtn.style.opacity = 0;
     iOrganelle.innerHTML = currentChar.organelle;
-    iImage.src = path + currentChar.name.toLowerCase() + "/organelle.png";
+    iImage.src = path + currentChar.name.toLowerCase() + "/1.png";
     iText.innerHTML = currentChar.info;
     if (currentChar.info == "") {
         iText.innerHTML = "wip";
