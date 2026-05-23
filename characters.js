@@ -188,6 +188,10 @@ characters.forEach(function(i){
     icon.classList.add("char");
     icon.onclick = function(){showChar(i)}
     icon.style.backgroundColor = i.color;
+    let img = document.createElement("img");
+    img.src = i.name.toLowerCase() + "/icon.png";
+    icon.appendChild(img);
+    //icon.style.backgroundImage = "linear-gradient(#FFFFFF80, #FFFFFF80), url(" + i.name.toLowerCase() + "/icon.png)";
     let name = document.createElement("p");
     name.classList.add("name");
     name.innerHTML = i.name;

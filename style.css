@@ -84,10 +84,12 @@ p {
 }
 .char {
     background-color: white;
+    background-size: cover;
     border-radius: 5px;
     color: black;
     cursor: pointer;
     height: 100px;
+    position: relative;
     width: 100%;
 }
 .char:hover {
@@ -96,6 +98,10 @@ p {
         opacity: 100%;
         visibility: visible;
     }
+}
+.char > img {
+    max-height: 100px;
+    width: fit-content;
 }
 .modal {
     background: var(--gradient);
@@ -116,10 +122,11 @@ p {
     z-index: 2;
 }
 .name {
-    opacity: 0;
     margin-top: 5px;
+    opacity: 0;
+    position: absolute;
     scrollbar-color: var(--teal) var(--mint);
-    transition: opacity 0.25s;
+    transition: opacity 0.15s;
     visibility: visible;
 }
 .selected {
