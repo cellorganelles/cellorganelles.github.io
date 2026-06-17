@@ -86,14 +86,17 @@ p {
     background-color: white;
     background-size: cover;
     border-radius: 5px;
-    color: black;
+    color: white;
     cursor: pointer;
     height: 100px;
     position: relative;
     width: 100%;
 }
 .char:hover {
-    backdrop-filter: brightness(80%);
+    :not(.name) {
+        filter: brightness(80%);
+        transition: filter 0.25s;
+    }
     .name {
         opacity: 100%;
         visibility: visible;
@@ -101,7 +104,9 @@ p {
 }
 .char > img {
     max-height: 100px;
-    width: fit-content;
+    object-fit: cover;
+    opacity: 50%;
+    width: 100%;
 }
 .modal {
     background: var(--gradient);
@@ -126,8 +131,10 @@ p {
     opacity: 0;
     position: absolute;
     scrollbar-color: var(--teal) var(--mint);
+    top: 0;
     transition: opacity 0.15s;
     visibility: visible;
+    width: 100%;
 }
 .selected {
     background: var(--teal-dark) !important;

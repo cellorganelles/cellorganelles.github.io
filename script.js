@@ -100,7 +100,7 @@ function showInfo() {
     char.style.filter = "blur(5px)";
     infoBtn.style.opacity = 0;
     iOrganelle.innerHTML = currentChar.organelle;
-    iImage.src = path + currentChar.name.toLowerCase() + "/1.png";
+    iImage.src = path + currentChar.name.toLowerCase() + "/organelle.png";
     iText.innerHTML = currentChar.info;
     if (currentChar.info == "") {
         iText.innerHTML = "wip";
