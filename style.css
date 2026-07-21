@@ -10,15 +10,18 @@
     --yg: rgb(225, 255, 200); /* Yellow green */
     --chewy: 'Chewy', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
     --happy-monkey: 'Happy Monkey', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
-    --rounded: 'M PLUS Rounded 1c', 'Short Stack', 'Arial';
+    --rounded: 'M PLUS Rounded 1c', 'Short Stack', 'Arial', 'sans-serif';
     --short-stack: 'Short Stack', 'Comic Sans MS', 'Chalkboard SE', 'sans-serif';
 }
 ::selection {
-    background-color: rgba(0, 255, 174, 0.75) !important;
+    background-color: rgba(0, 255, 174, 0.75);
 }
 a {
     color: var(--mint);
     text-decoration: dotted underline;
+}
+a:hover {
+    text-decoration: none;
 }
 body {
     background: var(--gradient);
@@ -77,10 +80,6 @@ p {
     cursor: pointer;
     font-family: var(--happy-monkey);
     font-size: 14pt;
-}
-.button:hover {
-    color: var(--teal);
-    transition: color 0.15s;
 }
 .char {
     background-color: white;
@@ -142,6 +141,11 @@ p {
 #about > p {
     width: calc(100% - 25px);
 }
+#about-btn:hover {
+    animation: wiggle 0.5s;
+    color: var(--teal);
+    transition: color 0.15s;
+}
 #about-content {
     background: var(--gradient-dark);
     color: white;
@@ -187,6 +191,8 @@ p {
     opacity: 100% !important;
 }
 #char-content {
+    display: flex;
+    justify-content: center;
     margin-top: 15px;
     text-align: center;
 }
@@ -227,6 +233,9 @@ p {
     right: 10px;
     transition: opacity 0.5s;
     width: 50px;
+}
+#info-btn:hover {
+    animation: wiggle 0.5s;
 }
 #info-organelle {
     color: var(--mint);
@@ -279,6 +288,25 @@ p {
 }
 #text {
     text-align: left;
+}
+
+@keyframes wiggle {
+    25% {transform: rotate(10deg);}
+    50% {transform: rotate(-10deg);}
+    75% {transform: rotate(5deg);}
+}
+
+@media screen and (max-width: 800px) {
+    #char-content {
+        display: block;
+    }
+    #image-content {
+        display: flex;
+        justify-content: center;
+    }
+    #text {
+        width: 80%
+    }
 }
 
 @media screen and (max-width: 500px) {
