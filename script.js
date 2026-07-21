@@ -22,7 +22,7 @@ var closeBtn = document.getElementById("close-btn");
 
 var path = "";
 if (!window.location.href.match("cellorganelles.github.io")) {
-    path = "https://organelle.netlify.app/";
+    //path = "https://organelle.netlify.app/";
     console.log("not on github");
 }
 
@@ -41,7 +41,7 @@ function showChar(c) {
     organelle.innerHTML = c.organelle;
     quote.innerHTML = c.quote;
     quote.style.color = c.color;
-    image.src = path + c.name.toLowerCase() + "/1.png";
+    image.src = c.name.toLowerCase() + "/full.png";
     desc.innerHTML = c.desc;
     jobs.innerHTML = c.jobs;
     h2 = document.getElementsByTagName("h2");
