@@ -77,6 +77,7 @@ p {
     background: 0;
     border: 0;
     border-radius: 25px 25px 0 0;
+    color: black;
     cursor: pointer;
     font-family: var(--happy-monkey);
     font-size: 14pt;

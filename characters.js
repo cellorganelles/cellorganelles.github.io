@@ -1,3 +1,7 @@
+var centriole = "Centrioles are log-shaped structures made of microtubules (specifically, they have a 9+0 arrangement like primary cilia). They aren't organelles themselves; they're a component of <b>centrosomes</b>. To clear up any confusion, centrosomes are the organelles, and centrioles are found inside them. Sorry if the title is misleading—it's cause Dista and Proxima are based on centrioles specifically…<br><br>During interphase, the centrosome serves as the microtubule-organizing center (MTOC) in animal cells. Microtubules make up the cytoskeleton for structural support; collectively, they're anchored to the centrosome, which at this time is located near the nucleus. There's only one centrosome in the cell until cell division.<br><br>During S phase, the centrosomes duplicate at the same time as DNA replicates. During mitosis, the two organelles move to the ends of the cell. They rearrange the cytoskeleton's microtubules to form the <b>mitotic spindle</b>. By the way, the centrioles aren't the one doing this—it's the pericetriolar material, the dynamic protein matrix surrounding them, that morphs and organizes the microtubules.";
+// finish this
+// bold key terms in organelle desc
+
 const characters = [
     /*
     {
@@ -44,7 +48,7 @@ const characters = [
         desc: "A super chaotic girl. She's attention-seeking, but she likes helping others. Almost always, though, her efforts tend to make things worse.<br><br>Twins with Proxima. The two of them are often referred to as \"the Sentries.\" However, only Dista is hated by Endo.",
         jobs: "She's responsible for sorting chromos during M Phase, taking charge of the facility when it's time to replicate the CELL. But when it's I Phase, she doesn't really do much, being a mechanic. Occasionally, the Sentries inspect other stations for repairs. She and her sister are especially good at fixing Cecilia's \"Silly Towers\" and Flynn's engine.",
         color: "rgb(235, 105, 210)",
-        info: "YAYAYAYAY<br><br><br>Dista's name is derived from the word \"distal,\" as in the distal (far) end of a centriole.",
+        info: centriole + "<br><br><br>Dista's name is derived from the word \"distal,\" as in the distal (far) end of a centriole.",
     },
     {
         name: "Endo",
@@ -125,7 +129,7 @@ const characters = [
         desc: "A reserved, awkward girl. She's normally quiet, but she hypes up when Dista does. Often cleans up her sister's mishaps whenever she gets into trouble.<br><br>Twins with Dista. The two of them are often referred to as \"the Sentries.\"",
         jobs: "She's responsible for sorting chromos during M Phase, taking charge of the facility when it's time to replicate the CELL. But when it's I Phase, she doesn't have much to do, being a mechanic. Occasionally, the Sentries inspect other stations for repairs. She and her sister are especially good at fixing Cecilia's \"Silly Towers\" and Flynn's engine.",
         color: "rgb(210, 100, 255)",
-        info: "placeholder<br><br><br>Proxima's name is derived from the word \"proximal,\" as in the proximal (close) end of a centriole.",
+        info: centriole + "<br><br><br>Proxima's name is derived from the word \"proximal,\" as in the proximal (close) end of a centriole.",
     },
     {
         name: "Rane",
